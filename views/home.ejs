@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+<body>
+    <%- include('./components/navbar.ejs') %>
+    <section class="categories">
+        <% categories.map(data=>{ %>             
+            <a href=""><%= data.title %></a>
+        <%}) %>
+    </section>
+    
+    <marquee behavior="" direction="down" >
+    <section class="videos">
+        <% videos.map(data=>{ %>             
+            <div class="list">
+                <img src=<%= data.images %> alt="">
+                <h1><%= data.title %></h1>
+                <p><%= data.channel %></p>
+            </div>
+        <%}) %>
+    </section>
+</marquee>
+    
+</body>
+</html>
